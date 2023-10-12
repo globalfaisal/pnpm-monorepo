@@ -1,0 +1,7 @@
+coverage
+public
+dist
+build
+.env*
+pnpm-lock.yaml
+pnpm-workspace.yaml

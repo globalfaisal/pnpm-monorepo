@@ -1,0 +1,43 @@
+{
+  "name": "pnpm-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint src --fix && pnpm format",
+    "format": "prettier -w .",
+    "prepare": "husky install",
+    "app": "pnpm --filter app",
+    "lib": "pnpm --filter lib"
+  },
+  "author": "globalfaisal",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.18.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.7.2",
+    "@commitlint/config-conventional": "17.7.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "husky": "8.0.3",
+    "lint-staged": "14.0.1",
+    "prettier": "^3.0.3"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0",
+      "eslint --fix"
+    ],
+    "**/*.{json,css,scss,md,webmanifest}": [
+      "prettier --write --ignore-unknown"
+    ]
+  }
+}
